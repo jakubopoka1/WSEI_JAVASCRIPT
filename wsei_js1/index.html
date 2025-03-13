@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Lab1</title>
+</head>
+
+<body>
+    <div id="input-container">
+        <button id="add-field">Dodaj pole</button>
+        <main>
+
+        </main>
+        <script type="text/javascript">
+            const inputContainer = document.querySelector('#input-container')
+            const mainContainer = document.querySelector('main')
+            const addFieldButton = document.querySelector('#add-field')
+
+            function createInputField() {
+                const inputWrapper = document.createElement('div')
+                inputWrapper.classList.add('input-wrapper')
+
+                const input = document.createElement('input')
+                input.type = 'text'
+                input.classList.add('dynamic-input')
+
+                const removeButton = document.createElement('button')
+                removeButton.textContent = 'Usuń'
+                removeButton.addEventListener('click', () => {
+                    inputContainer.removeChild(inputWrapper)
+                    calculateValues()
+                })
+
+                input.addEventListener('input', calculateValues)
+
+                inputWrapper.appendChild(input)
+                inputWrapper.appendChild(removeButton)
+                inputContainer.insertBefore(inputWrapper, addFieldButton)
+
+                calculateValues()
+            }
+
+            function calculateValues() {
+                const inputs = document.querySelectorAll('.dynamic-input')
+                const values = Array.from(inputs).map(input => +input.value || 0)
+
+                if (values.length === 0) {
+                    mainContainer.textContent = 'Brak wartości'
+                    return
+                }
+
+                const maxValue = Math.max(...values)
+                const minValue = Math.min(...values)
+                const average = values.reduce((sum, val) => sum + val, 0) / values.length
+
+                mainContainer.textContent = `Max: ${maxValue} | Min: ${minValue} | Średnia: ${average}`
+            }
+
+            addFieldButton.addEventListener('click', createInputField)
+
+            for (let i = 0; i < 3; i++) {
+                createInputField()
+            }
+        </script>
+</body>
+
+</html>
