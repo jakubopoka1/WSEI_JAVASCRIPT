@@ -4,13 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drumkit</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Drumkit Recorder</title>
 </head>
 
 <body>
-    <audio src="./sounds/clap.wav" controls id="clap" data-key="a"></audio>
-    <audio src="./sounds/hihat.wav" controls id="hihat" data-key="s"></audio>
-    <audio src="./sounds/kick.wav" controls id="kick" data-key="d"></audio>
+    <h1>Drumkit Recorder</h1>
+
+    <div class="drumkit">
+        <audio src="./sounds/clap.wav" id="clap" data-key="a"></audio>
+        <audio src="./sounds/hihat.wav" id="hihat" data-key="s"></audio>
+        <audio src="./sounds/kick.wav" id="kick" data-key="d"></audio>
+    </div>
+
+    <div class="controls">
+        <div class="channel">
+            <h2>Kanał 1</h2>
+            <button id="record1">Nagrywaj</button>
+            <button id="stop1">Stop</button>
+            <button id="play1">Odtwórz</button>
+        </div>
+        <div class="channel">
+            <h2>Kanał 2</h2>
+            <button id="record2">Nagrywaj</button>
+            <button id="stop2">Stop</button>
+            <button id="play2">Odtwórz</button>
+        </div>
+        <div class="channel">
+            <h2>Kanał 3</h2>
+            <button id="record3">Nagrywaj</button>
+            <button id="stop3">Stop</button>
+            <button id="play3">Odtwórz</button>
+        </div>
+        <div class="channel">
+            <h2>Kanał 4</h2>
+            <button id="record4">Nagrywaj</button>
+            <button id="stop4">Stop</button>
+            <button id="play4">Odtwórz</button>
+        </div>
+    </div>
+
+    <button id="playAll" class="play-all">Odtwórz Wszystkie</button>
+
     <script src="main.js"></script>
 </body>
 
