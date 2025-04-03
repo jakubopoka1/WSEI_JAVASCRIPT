@@ -1,0 +1,76 @@
+body {
+	background-color: #fff4f4;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 20px;
+}
+
+.container {
+	max-width: 600px;
+	margin: auto;
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	text-align: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+input,
+textarea,
+button {
+	padding: 10px;
+	font-size: 16px;
+}
+
+#notesContainer {
+	margin-top: 20px;
+}
+
+.note {
+	position: relative;
+	padding: 15px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 5px;
+	font-family: Arial, sans-serif;
+}
+
+.note-header {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	gap: 5px;
+}
+
+.note .delete-btn {
+	background: red;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+.note .pin-btn {
+	background: yellow;
+	color: black;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	font-size: 14px;
+	border-radius: 5px;
+}
